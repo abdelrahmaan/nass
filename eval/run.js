@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// node eval/run.js            الدرجة + الحالات الفاشلة
-// node eval/run.js --json     نفس الكلام كـ JSON، للـ CI
-// node eval/run.js --quiet    الدرجة بس
+// node eval/run.js            the score + the failing cases
+// node eval/run.js --json     the same as JSON, for CI
+// node eval/run.js --quiet    the score only
 //
-// الدرجة = عدد الحالات اللي الناتج فيها طابق المتوقع بالحرف.
-// الرقم ده هو الحاجة الوحيدة اللي بتقول إن الشغل بقى أحسن فعلًا.
+// Score = the number of cases whose output matches the expected text exactly.
+// This number is the only thing that says the work actually got better.
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -36,30 +36,30 @@ if (process.argv.includes("--json")) {
   console.log(`${passed}/${total}`);
 } else {
   const pct = (score * 100).toFixed(0);
-  console.log(`\n  الدرجة: ${passed}/${total}  (${pct}%)\n`);
+  console.log(`\n  Score: ${passed}/${total}  (${pct}%)\n`);
   for (const [g, s] of Object.entries(byGroup)) {
     const bar = "█".repeat(s.pass) + "·".repeat(s.total - s.pass);
     console.log(`  ${g.padEnd(12)} ${String(s.pass).padStart(2)}/${s.total}  ${bar}`);
   }
   const failed = results.filter((r) => !r.pass);
   if (failed.length) {
-    console.log(`\n  الفاشلة (${failed.length}):\n`);
+    console.log(`\n  Failing (${failed.length}):\n`);
     for (const f of failed.slice(0, 12)) {
       console.log(`  #${String(f.id).padStart(2)} [${f.group}]`);
-      console.log(`      داخل   ${JSON.stringify(f.in)}`);
-      console.log(`      متوقع  ${JSON.stringify(f.out)}`);
-      console.log(`      طالع   ${JSON.stringify(f.got)}\n`);
+      console.log(`      input     ${JSON.stringify(f.in)}`);
+      console.log(`      expected  ${JSON.stringify(f.out)}`);
+      console.log(`      got       ${JSON.stringify(f.got)}\n`);
     }
-    if (failed.length > 12) console.log(`  ... و${failed.length - 12} كمان\n`);
+    if (failed.length > 12) console.log(`  ... and ${failed.length - 12} more\n`);
   }
 }
 
-// الـ CI بيقرا الـ exit code. --min بيحدد الحد الأدنى.
+// CI reads the exit code. --min sets the minimum score.
 const minArg = process.argv.find((a) => a.startsWith("--min="));
 if (minArg) {
   const min = Number(minArg.split("=")[1]);
   if (passed < min) {
-    console.error(`\n  فشل: ${passed}/${total} أقل من الحد ${min}\n`);
+    console.error(`\n  Failed: ${passed}/${total} is below the minimum of ${min}\n`);
     process.exit(1);
   }
 }

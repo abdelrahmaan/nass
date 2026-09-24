@@ -1,13 +1,13 @@
 ---
-name: حالة eval ناقصة
-about: لقيت خطأ عربي شائع مش موجود في eval/cases.json
+name: Missing eval case
+about: A common Arabic mistake that is not in eval/cases.json
 title: "case: "
 labels: eval
 ---
 
-**النص الغلط:**
+**The incorrect text:**
 
-**النص الصح:**
+**The correct text:**
 
-**ليه ده خطأ شائع:**
-<!-- سطر واحد. لو الحالة فيها احتمالين صح، قول ده — دي أهم من اللي ليها إجابة واحدة. -->
+**Why this is a common mistake:**
+<!-- One line. If the case has two valid answers, say so — those matter more than the ones with a single answer. -->

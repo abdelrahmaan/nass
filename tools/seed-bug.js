@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// node tools/seed-bug.js          يزرع bug
-// node tools/seed-bug.js --undo   يشيله
+// node tools/seed-bug.js          plants a bug
+// node tools/seed-bug.js --undo   removes it
 //
-// اليوم 14 محتاج bug حقيقي علشان الـ agent يلاقيه ويصلّحه. السكريبت ده بيزرع
-// واحد قابل للتكرار في lib/normalize.js: أول قاعدة بتتخطّى، فالـ digits
-// مابتشتغلش خالص. الـ eval هيقع، والتستات هتفشل — وده المطلوب.
+// Day 14 needs a real bug for the agent to find and fix. This script plants a
+// reproducible one in lib/normalize.js: the first rule is skipped, so `digits`
+// never runs. The eval drops and the tests fail — which is the point.
 //
-// ماتبصّش على الـ diff قبل ما الـ agent يشتغل. الفكرة كلها إنه يلاقيه لوحده.
+// Don't look at the diff before the agent runs. The whole idea is that it finds it on its own.
 
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -23,21 +23,21 @@ const src = await readFile(FILE, "utf8");
 
 if (undo) {
   if (!src.includes(BUGGY)) {
-    console.log("  مفيش bug مزروع.");
+    console.log("  No bug is planted.");
     process.exit(0);
   }
   await writeFile(FILE, src.replace(BUGGY, CLEAN), "utf8");
-  console.log("  اترفع. شغّل node --test و node eval/run.js للتأكيد.");
+  console.log("  Removed. Run node --test and node eval/run.js to confirm.");
 } else {
   if (src.includes(BUGGY)) {
-    console.log("  الـ bug مزروع أصلًا.");
+    console.log("  The bug is already planted.");
     process.exit(0);
   }
   if (!src.includes(CLEAN)) {
-    console.error("  lib/normalize.js اتغيّر عن الأصل — ازرع bug بإيدك بدل ده.");
+    console.error("  lib/normalize.js has changed from the original — plant a bug by hand instead.");
     process.exit(1);
   }
   await writeFile(FILE, src.replace(CLEAN, BUGGY), "utf8");
-  console.log("  اتزرع في lib/normalize.js.");
-  console.log("  شغّل node eval/run.js وشوف الرقم وقع — وبعدين سيب الـ agent يلاقيه.");
+  console.log("  Planted in lib/normalize.js.");
+  console.log("  Run node eval/run.js and watch the score drop — then let the agent find it.");
 }

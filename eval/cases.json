@@ -1,5 +1,5 @@
 {
-  "_note": "50 حالة. كل حالة: نص داخل، والنص الصح المتوقع. الدرجة = تطابق حرفي. المجموعة دي هي اللي بتحوّل «حسّيت إنه بقى أحسن» لرقم. ماتغيّرش expected علشان تعدّي حالة — ده غش على نفسك.",
+  "_note": "50 cases. Each one: an input text and the exact expected output. Score = exact match. This set is what turns \"it feels better\" into a number. Never change an expected value to make a case pass — you'd only be cheating yourself.",
   "cases": [
     { "id": 1,  "group": "digits",      "in": "الاجتماع الساعة ٣ العصر",           "out": "الاجتماع الساعة 3 العصر" },
     { "id": 2,  "group": "digits",      "in": "عندي ١٢ ملف",                       "out": "عندي 12 ملف" },

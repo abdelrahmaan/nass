@@ -7,7 +7,7 @@
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,sans-serif;
+  font-family:system-ui,-apple-system,"IBM Plex Sans Arabic",sans-serif;
   line-height:1.8; font-size:16px;
 }
 main{max-width:760px; margin-inline:auto; padding-inline:20px; padding-block:40px 64px}
@@ -48,9 +48,9 @@ button:focus-visible{outline:2px solid var(--teal); outline-offset:3px}
 
 .meta{font-size:13px; color:var(--muted); font-family:ui-monospace,monospace}
 
-/* ملحوظة: فيه عيب بصري مقصود في الصفحة دي.
-   مش مكتوب هنا هو فين — اليوم 8 في المسار هو اللي هيخلّي Claude يلاقيه
-   بـ /chrome ويصلّحه. لو لقيته بنفسك دلوقتي، سيبه لحد اليوم ده. */
+/* Note: this page has a deliberate visual defect.
+   Where it is isn't written here — day 8 of the path is where Claude finds it
+   with /chrome and fixes it. If you spot it yourself now, leave it until then. */
 .output{
   padding:14px 16px; border:1px solid var(--teal-line); border-radius:12px;
   background:var(--teal-soft); color:var(--ink);

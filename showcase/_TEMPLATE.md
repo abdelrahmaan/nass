@@ -1,28 +1,28 @@
-# <اسمك>
+# <your name>
 
-- **الـ repo:** https://github.com/<username>/<repo>
-- **خلّصت في:** <التاريخ>
-- **مشيت على:** مشروع المسار (nass) / الـ repo بتاعي — امسح اللي ملوش لزمة
+- **Repo:** https://github.com/<username>/<repo>
+- **Finished on:** <date>
+- **Worked on:** the path project (nass) / my own repo — delete the one that doesn't apply
 
-## الرقم
+## The number
 
 | | eval |
 |---|---|
-| أول يوم | `10/50` |
-| آخر يوم | `<رقمك>` |
+| Day 1 | `10/50` |
+| Last day | `<your score>` |
 
-الحالات اللي لسه فاشلة وليه:
+The cases that still fail, and why:
 
-> <سطرين. لو قلت «محتاجة قاموس صرفي» ده رد كامل ومحترم.>
+> <Two lines. "Needs a morphological dictionary" is a complete and respectable answer.>
 
-## تقرير check.js
+## check.js report
 
-<الزق هنا ناتج `node check.js --md` زي ما طلع>
+<Paste the output of `node check.js --md` here, exactly as printed>
 
-## حاجة اتعلمتها وماكنتش متوقعها
+## One thing I learned that I didn't expect
 
-> <سطرين بالكتير>
+> <Two lines at most>
 
-## أي حاجة تانية عايز تقولها
+## Anything else
 
-> <اختياري — لو فيه حاجة بنيتها زيادة، أو يوم وقفت فيه، قولها هنا>
+> <Optional — anything extra you built, or a day where you got stuck>

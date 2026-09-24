@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>nass — عدّة نصوص عربية</title>
+<title>nass — an Arabic text toolkit</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <main>
     <header>
       <h1>nass</h1>
-      <p class="sub">الزق نص عربي، وشوف اتصلّح إيه فيه.</p>
+      <p class="sub">Paste Arabic text and see what gets fixed.</p>
     </header>
 
     <section class="panel">
-      <label for="input">النص</label>
-      <textarea id="input" rows="7" placeholder="الزق النص هنا…" dir="auto"></textarea>
+      <label for="input">Text</label>
+      <textarea id="input" rows="7" placeholder="Paste Arabic text here…" lang="ar" dir="auto"></textarea>
       <div class="row">
-        <button id="run" type="button">صحّح</button>
-        <button id="sample" type="button" class="ghost">جرّب مثال</button>
+        <button id="run" type="button">Fix</button>
+        <button id="sample" type="button" class="ghost">Try an example</button>
         <span id="meta" class="meta"></span>
       </div>
     </section>
 
     <section class="panel" id="result" hidden>
-      <label>الناتج</label>
-      <div id="output" class="output"></div>
-      <button id="copy" type="button" class="ghost">انسخ</button>
+      <label>Output</label>
+      <div id="output" class="output" lang="ar" dir="rtl"></div>
+      <button id="copy" type="button" class="ghost">Copy</button>
 
-      <label class="mt">اللي اتغيّر</label>
-      <div id="diff" class="diff"></div>
+      <label class="mt">What changed</label>
+      <div id="diff" class="diff" lang="ar" dir="rtl"></div>
 
-      <label class="mt">القواعد اللي اشتغلت</label>
+      <label class="mt">Rules that ran</label>
       <div id="applied" class="chips"></div>
     </section>
 
     <footer>
-      <p>starter repo لمسار Claude Code من AIXpert. اقرا <code>README.md</code> الأول.</p>
+      <p>The starter repo for the AIXpert Claude Code Path. Read <code>README.md</code> first.</p>
     </footer>
   </main>
   <script type="module" src="/app.js"></script>

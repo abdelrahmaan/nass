@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // node tools/serve.js   →  http://localhost:8080
 //
-// server صغير من مكتبات Node نفسها — مفيش npm install.
-// بيقدّم الصفحة، وبيكتب سطر في logs/checks.log على كل طلب تصحيح.
-// الـ log ده مش زينة: اليوم 6 بيقراه.
+// A small server built on Node's standard library — no npm install.
+// It serves the page and writes a line to logs/checks.log for every correction request.
+// The log is not decoration: day 6 reads it.
 
 import { createServer } from "node:http";
 import { readFile, appendFile, mkdir } from "node:fs/promises";
@@ -39,7 +39,7 @@ const server = createServer(async (req, res) => {
       payload = JSON.parse(body || "{}");
     } catch {
       res.writeHead(400, TYPES[".json"]);
-      return res.end(JSON.stringify({ error: "JSON مش مظبوط" }));
+      return res.end(JSON.stringify({ error: "Invalid JSON" }));
     }
     const text = String(payload.text ?? "");
     const { output, applied } = check(text);
@@ -57,12 +57,12 @@ const server = createServer(async (req, res) => {
     return res.end(JSON.stringify({ output, applied, ms }));
   }
 
-  // ملفات ثابتة، محبوسة جوّه الـ repo
+  // Static files, confined to the repo
   const rel = url.pathname === "/" ? "/index.html" : url.pathname;
   const file = join(ROOT, normPath(rel).replace(/^(\.\.[/\\])+/, ""));
   if (!file.startsWith(ROOT)) {
     res.writeHead(403);
-    return res.end("ممنوع");
+    return res.end("Forbidden");
   }
   try {
     const data = await readFile(file);
@@ -72,11 +72,11 @@ const server = createServer(async (req, res) => {
     res.end(data);
   } catch {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    res.end("مش موجود");
+    res.end("Not found");
   }
 });
 
 server.listen(PORT, () => {
-  console.log(`\n  nass شغّال على  http://localhost:${PORT}`);
-  console.log(`  الـ log بيتكتب في  logs/checks.log\n`);
+  console.log(`\n  nass is running at  http://localhost:${PORT}`);
+  console.log(`  Logging to          logs/checks.log\n`);
 });

@@ -1,5 +1,5 @@
-// الواجهة. بتبعت النص للـ server وبتعرض الناتج.
-// الـ server هو اللي بينادي lib/normalize.js، علشان كل تصحيح يتسجّل في الـ log.
+// The front end. Sends the text to the server and shows the result.
+// The server is what calls lib/normalize.js, so every correction lands in the log.
 
 const $ = (id) => document.getElementById(id);
 
@@ -20,10 +20,10 @@ $("input").addEventListener("keydown", (e) => {
 $("copy").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText($("output").textContent);
-    $("copy").textContent = "اتنسخ ✓";
-    setTimeout(() => ($("copy").textContent = "انسخ"), 1500);
+    $("copy").textContent = "Copied ✓";
+    setTimeout(() => ($("copy").textContent = "Copy"), 1500);
   } catch {
-    $("copy").textContent = "المتصفح مرضيش ينسخ";
+    $("copy").textContent = "The browser blocked copying";
   }
 });
 
@@ -42,9 +42,9 @@ async function run() {
     if (!res.ok) throw new Error(res.status);
     data = await res.json();
   } catch (err) {
-    // بنقول اللي حصل بالظبط — مش بنسيب الشاشة فاضية
+    // Say exactly what happened — never leave the screen blank
     $("meta").textContent =
-      "الـ server مش رادّ. شغّل: node tools/serve.js";
+      "The server isn't responding. Run: node tools/serve.js";
     return;
   }
 
@@ -82,7 +82,7 @@ function renderDiff(before, after) {
   if (!changes) {
     const p = document.createElement("p");
     p.className = "meta";
-    p.textContent = "مفيش حاجة اتغيرت.";
+    p.textContent = "Nothing changed.";
     box.append(p);
   }
 }
@@ -93,7 +93,7 @@ function renderApplied(applied) {
   if (!applied.length) {
     const p = document.createElement("p");
     p.className = "meta";
-    p.textContent = "ولا قاعدة اشتغلت.";
+    p.textContent = "No rule ran.";
     box.append(p);
     return;
   }

@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: خلّصت المسار
+  - name: I finished the path
     url: https://github.com/abdelrahmaan/nass/tree/main/showcase
-    about: الـ showcase بيتعمله PR مش issue — الطريقة هنا
+    about: The showcase is a PR, not an issue — here's how

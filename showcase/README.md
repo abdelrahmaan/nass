@@ -1,30 +1,38 @@
-# showcase — ورّيني اللي عملته
+# showcase — show what you built
 
-خلّصت المسار؟ افتح PR هنا. الملفات اللي في الفولدر ده هي الدليل إن حد عدّى فعلًا، مش كلام.
+Finished the path? Open a PR here. The files in this folder are the proof that someone
+actually made it through, not just claimed to.
 
-## إزاي
+## How
 
-1. اعمل fork للـ repo ده، وشغّل `node check.js --md` في نسختك.
-2. انسخ `showcase/_TEMPLATE.md` لـ `showcase/<اسمك-على-github>.md` واملاه.
-3. افتح PR عنوانه: `showcase: <اسمك>`.
+1. Fork this repo, and run `node check.js --md` in your own copy.
+2. Copy `showcase/_TEMPLATE.md` to `showcase/<your-github-username>.md` and fill it in.
+3. Open a PR titled `showcase: <your name>`.
 
-فتح الـ PR نفسه تمرين من اليوم 13 — الـ Action اللي في الـ repo هيراجعه.
+Opening the PR is itself a day 13 exercise — the Action in the repo reviews it.
 
-## الشروط
+## Requirements
 
-قصيرة، وكلها قابلة للتحقق:
+Short, and all of them checkable:
 
-- **لينك للـ repo بتاعك** وهو public. من غيره مفيش حاجة أشوفها.
-- **تقرير `node check.js --md`** ملزوق زي ما طلع. متعدّلش فيه بإيدك — لو فيه حاجة ناقصة سيبها ناقصة؛ ده مش امتحان.
-- **رقم الـ eval قبل وبعد.** من `node eval/run.js`. الرقم الأول من أول يوم، والتاني من آخر يوم.
-- **حاجة واحدة اتعلمتها وماكنتش متوقعها.** سطرين بالكتير. ده أكتر جزء بقراه فعلًا.
+- **A link to your repo**, public. Without it there is nothing to look at.
+- **The output of `node check.js --md`**, pasted exactly as printed. Don't edit it by hand —
+  if something is missing, leave it missing. This is not an exam.
+- **The eval score, before and after**, from `node eval/run.js`. The first from day 1, the
+  second from your last day.
+- **One thing you learned that you didn't expect.** Two lines at most. It is the part I
+  actually read.
 
-## اللي هيحصل بعد كده
+## What happens next
 
-بمرّ على الـ PRs المفتوحة **مرة كل أسبوع**، وبعلّق على اللي أقدر أعلّق عليه. مش بوعد إني أراجع كل PR بالتفصيل — لو بقوا كتير مش هعرف، وأحسن أقولها دلوقتي من إني أسيبك مستني.
+I go through open PRs **once a week** and comment where I can. I can't promise a detailed
+review of every PR — if there are many, I won't manage it, and I would rather say so now than
+leave you waiting.
 
-اللي مضمون: أي PR مستوفي الشروط فوق **بيتدمج**. اسمك وشغلك بيبقوا في الـ repo ده على طول.
+What is guaranteed: any PR that meets the requirements above **gets merged**. Your name and
+your work stay in this repo.
 
-## مش خلصت وواقف في حتة؟
+## Stuck and not finished?
 
-ده مكانه issue مش PR — فيه template جاهز. الـ showcase للي خلّص.
+That belongs in an issue, not a PR — there is a template for it. The showcase is for
+finishers.

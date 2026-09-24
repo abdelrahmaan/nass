@@ -1,18 +1,18 @@
 ---
-name: واقف في حتة
-about: عالق في يوم معيّن ومش عارف تكمّل
-title: "يوم N — "
+name: Stuck on a day
+about: You are stuck on a specific day and can't move forward
+title: "Day N — "
 labels: stuck
 ---
 
-**اليوم:**
+**The day:**
 
-**اللي بحاول أعمله:**
+**What I'm trying to do:**
 
-**اللي حصل بدل كده:**
-<!-- الزق رسالة الغلط كاملة لو فيه واحدة -->
+**What happened instead:**
+<!-- Paste the full error message if there is one -->
 
-**جربت إيه:**
+**What I've tried:**
 
-**نظامي:**
-<!-- node --version وnظام التشغيل -->
+**My setup:**
+<!-- node --version and your operating system -->

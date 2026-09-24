@@ -1,5 +1,5 @@
 {
-  "_note": "قاموس تصحيحات. words = مطابقة الكلمة كاملة. phrases = مطابقة عبارة. كبّره وإنت ماشي — ده أسرع طريق ترفع بيه رقم الـ eval، وكمان أسرع طريق تكسر بيه حاجات لو مدققتش. قبل ما تضيف مدخل، اسأل نفسك: فيه حالة الكلمة دي تكون صح فيها؟ لو أيوه، ماتضيفهاش.",
+  "_note": "The correction dictionary. words = whole-word match. phrases = phrase match. Grow it as you go — it is the fastest way to raise the eval score, and the fastest way to break things if you're careless. Before adding an entry, ask: is there a context where this word is actually correct? If yes, don't add it.",
 
   "words": {
     "لاكن": "لكن",

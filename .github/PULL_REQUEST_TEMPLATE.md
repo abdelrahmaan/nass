@@ -1,12 +1,12 @@
-<!-- الـ PR ده لإضافة ملف في showcase/؟ سيب التمبلت ده.
-     PR لحاجة تانية (إصلاح في الـ starter، حالة eval جديدة)؟ امسحه واكتب اللي عملته. -->
+<!-- Is this PR adding a file to showcase/? Keep this template.
+     A PR for something else (a fix to the starter, a new eval case)? Delete it and describe what you did. -->
 
 ## showcase
 
-- [ ] ضفت ملف واحد بس: `showcase/<اسمي>.md`
-- [ ] الـ repo بتاعي public واللينك شغّال
-- [ ] لزقت ناتج `node check.js --md` زي ما طلع، من غير تعديل
-- [ ] كتبت رقم الـ eval قبل وبعد
-- [ ] كتبت الحاجة اللي اتعلمتها
+- [ ] I added exactly one file: `showcase/<my-username>.md`
+- [ ] My repo is public and the link works
+- [ ] I pasted the output of `node check.js --md` as printed, unedited
+- [ ] I included the eval score before and after
+- [ ] I wrote the one thing I learned
 
-**لينك الـ repo:**
+**Repo link:**
