@@ -1,0 +1,82 @@
+:root{
+  --teal:#0d9488; --teal-dark:#0f766e; --teal-soft:#f0fdfa; --teal-line:#ccfbf1;
+  --ink:#0f172a; --ink-2:#475569; --muted:#64748b;
+  --line:#e2e8f0; --bg:#f8fafc; --card:#ffffff;
+  --del:#b91c1c; --ins:#166534;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,sans-serif;
+  line-height:1.8; font-size:16px;
+}
+main{max-width:760px; margin-inline:auto; padding-inline:20px; padding-block:40px 64px}
+
+header{margin-block-end:28px}
+h1{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:30px; font-weight:600; margin:0 0 6px; color:var(--teal-dark);
+}
+.sub{margin:0; color:var(--muted)}
+
+.panel{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:22px 24px; margin-block-end:16px;
+}
+label{
+  display:block; font-size:13px; color:var(--muted);
+  margin-block-end:8px; font-weight:500;
+}
+label.mt{margin-block-start:22px}
+
+textarea{
+  width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:12px;
+  font:inherit; line-height:1.9; color:var(--ink); background:#fff; resize:vertical;
+}
+textarea:focus{outline:2px solid var(--teal); outline-offset:2px; border-color:transparent}
+
+.row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-block-start:14px}
+button{
+  font:inherit; font-size:15px; font-weight:600; cursor:pointer;
+  background:var(--teal-dark); color:#fff; border:1px solid var(--teal-dark);
+  border-radius:999px; padding-inline:22px; padding-block:9px; min-height:44px;
+}
+button:hover{background:var(--teal)}
+button.ghost{background:transparent; color:var(--ink-2); border-color:var(--line); font-weight:500}
+button.ghost:hover{border-color:var(--teal); color:var(--teal-dark); background:transparent}
+button:focus-visible{outline:2px solid var(--teal); outline-offset:3px}
+
+.meta{font-size:13px; color:var(--muted); font-family:ui-monospace,monospace}
+
+/* ملحوظة: فيه عيب بصري مقصود في الصفحة دي.
+   مش مكتوب هنا هو فين — اليوم 8 في المسار هو اللي هيخلّي Claude يلاقيه
+   بـ /chrome ويصلّحه. لو لقيته بنفسك دلوقتي، سيبه لحد اليوم ده. */
+.output{
+  padding:14px 16px; border:1px solid var(--teal-line); border-radius:12px;
+  background:var(--teal-soft); color:var(--ink);
+  white-space:pre; line-height:1.9; margin-block-end:12px;
+}
+
+.diff{display:flex; flex-direction:column; gap:6px}
+.diff-line{
+  font-size:15px; padding-block:4px;
+  border-block-end:1px dotted var(--line);
+}
+.diff-line:last-child{border-block-end:none}
+.del{color:var(--del); text-decoration:line-through; text-decoration-thickness:1px}
+.ins{color:var(--ins); font-weight:600}
+
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+  background:var(--teal-soft); color:var(--teal-dark);
+  border:1px solid var(--teal-line); border-radius:999px;
+  padding-inline:12px; padding-block:4px;
+}
+
+footer{margin-block-start:32px; color:var(--muted); font-size:13.5px}
+footer code{
+  font-family:ui-monospace,monospace; font-size:.9em;
+  background:#fff; border:1px solid var(--line); border-radius:4px;
+  padding-inline:5px;
+}

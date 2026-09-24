@@ -1,0 +1,16 @@
+{
+  "name": "nass",
+  "version": "1.0.0",
+  "description": "عدّة نصوص عربية — starter repo لمسار Claude Code من AIXpert",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node tools/serve.js",
+    "test": "node --test",
+    "eval": "node eval/run.js",
+    "check": "node check.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
