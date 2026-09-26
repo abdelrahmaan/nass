@@ -73,8 +73,8 @@ meaning anything.
 ## What is missing, and what you will build
 
 `CLAUDE.md` · `.claude/rules/` · `.claude/skills/` · `.claude/agents/` ·
-`.claude/settings.json` (hooks) · an MCP server · a GitHub Action · an agent built with the
-Agent SDK · a plugin
+`.claude/settings.json` (hooks) · an MCP server · a GitHub Action · an AFK loop
+(`tools/loop.sh`) · an agent built with the Agent SDK · a plugin
 
 Each one is a day in the path.
 
